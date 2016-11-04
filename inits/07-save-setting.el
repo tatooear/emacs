@@ -46,10 +46,15 @@
 (use-package recentf-ext :ensure t)
 (require 'recentf-ext) ;;; 最近使ったファイル」を（メニューに）表示する
 
-(use-package auto-save-buffers-enhanced :ensure t)
-(require 'auto-save-buffers-enhanced)
-(setq auto-save-buffers-enhanced-interval 1) ; 指定のアイドル秒で保存
-(auto-save-buffers-enhanced t)
+;; (use-package auto-save-buffers-enhanced :ensure t)
+;; (require 'auto-save-buffers-enhanced)
+;; (setq auto-save-buffers-enhanced-interval 1) ; 指定のアイドル秒で保存
+;; (auto-save-buffers-enhanced t)
+
+(use-package super-save :ensure t)
+(setq super-save-auto-save-when-idle t
+        super-save-idle-duration 10)
+(super-save-mode +1)
 
 (require 'bm)
 (defun bm-find-files-in-repository ()
